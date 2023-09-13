@@ -1,0 +1,44 @@
+
+<table class="table table-striped table-bordered table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zipcode</th>
+        <th>Phone</th>
+        <th colspan="3"> </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @foodbanks.each do |foodbank| %>
+        <tr>
+          <td><%= foodbank.name %>
+          </td>
+          <td><%= foodbank.address %>
+          </td>
+          <td><%= foodbank.city %>
+          </td>
+          <td><%= foodbank.state %>
+          </td>
+          <td><%= foodbank.zipcode %>
+          </td>
+          <td><%= foodbank.phone %>
+          </td>
+
+          <td><%= link_to 'Show', foodbank %></td>
+          <td><%= link_to  'Edit', edit_foodbank_path(foodbank) %></td>
+          <td><%= link_to 'Destroy', foodbank, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<br>
+
+<%= link_to "New foodbank", new_foodbank_path, class:"btn btn-secondary" %>
+
+

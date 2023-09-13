@@ -1,0 +1,20 @@
+
+<div class="jumbotron">
+  <h1 class="display-4">
+    <%= @foodbank.name %>
+  </h1>
+
+  <p class="lead">
+    Address: <%= @foodbank.address %> 
+    <%= @foodbank.city %> 
+    <%= @foodbank.state %> 
+    <%= @foodbank.zipcode %> </br>
+    Phone: <%= @foodbank.phone %> </br>
+    Email: <%= @foodbank.email %>
+  </p>
+ 
+  <%= link_to "Edit", edit_foodbank_path(@foodbank), class:"btn btn-secondary" %>
+  <%= link_to "Back", foodbanks_path, class:"btn btn-secondary" %>
+</div>
+
+

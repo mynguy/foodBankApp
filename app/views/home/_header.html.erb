@@ -13,44 +13,42 @@
         </li>
 
         <li class="nav-item">
-          <%= link_to "Public Food Banks", foodbanks_path, class:"nav-link" %>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to "Food Banks", foodbanks_path, class:"nav-link" %>
+          <%= link_to "Local Foodbanks", home_banks_path, class:"nav-link" %>
         </li>
 
         <% if user_signed_in? %>
 
           <li class="nav-item">
-            <%= link_to "Add Food Bank", new_foodbank_path, class:"nav-link" %>
+            <%= link_to "Admin Control", foodbanks_path, class:"nav-link" %>
           </li>
 
           <li class="nav-item">
-          <%= link_to "Sign Out", destroy_user_session_path, class:"nav-link", data: { turbo_method: :delete} %>
+            <%= link_to "Add", new_foodbank_path, class:"nav-link" %>
           </li>
 
           <li class="nav-item">
           <%= link_to "Edit Profile", edit_user_registration_path, class:"nav-link" %>
           </li>
 
-        <% else %>
-
           <li class="nav-item">
-            <%= link_to "Sign Up", new_user_registration_path, class:"nav-link" %>
+          <%= link_to "Sign Out", destroy_user_session_path, class:"nav-link", data: { turbo_method: :delete} %>
           </li>
 
+        <% else %>
+
+          <%# This code is blocked for future implementation 
+          <li class="nav-item">
+          <%= link_to "Sign Up", new_user_registration_path, class:"nav-link" %DEL>
+          </li>
+          %>
+
+          <%# Move button to the right %>
           <li class="nav-item">
             <%= link_to "Sign In", new_user_session_path, class:"nav-link" %>
           </li>
 
           <% end %>
 
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
   </div>
 </nav>

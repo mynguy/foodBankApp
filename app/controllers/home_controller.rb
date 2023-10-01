@@ -4,6 +4,9 @@ class HomeController < ApplicationController
 
   def about
     @about_me = "My Name is Test"
+  end
+
+  def banks
     @foodbanks = Foodbank.all
   end
 
